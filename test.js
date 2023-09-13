@@ -134,7 +134,6 @@ searchInputField.addEventListener('input', function (e) {
 
 
 
-// ... (Your existing code)
 
 const filterOption = document.getElementById('filterOption');
 filterOption.addEventListener('change', function () {
@@ -178,6 +177,30 @@ sortDateBtn.addEventListener('click', () => {
 });
 
 
+// Function to handle voice recognition
+function startVoiceRecognition() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US'; // Set the recognition language to English or your preferred language.
 
+    recognition.onresult = (event) => {
+        const speechResult = event.results[0][0].transcript.trim(); // Remove leading and trailing spaces
+        if (speechResult.endsWith('.')) {
+            searchInputField.value = speechResult.slice(0, -1); // Remove the trailing period (.)
+        } else {
+            searchInputField.value = speechResult;
+        }
+        searchInputField.dispatchEvent(new Event('input')); // Trigger the input event to initiate the search.
+    };
 
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+    };
 
+    recognition.start();
+}
+
+// Add a click event listener to the microphone icon
+const startVoiceSearchBtn = document.getElementById('startVoiceSearch');
+startVoiceSearchBtn.addEventListener('click', () => {
+    startVoiceRecognition();
+});

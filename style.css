@@ -1,45 +1,64 @@
-
-body{
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     /* background-color: #616091; */
-    
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+
 }
 
-.custom-header{
+/* .custom-header {
     margin: 16px;
     padding: 8px;
     background-color: #04041c;
+} */
+
+
+.custom-header {
+    position: relative;
+}
+
+.custom-header h1 {
+    color: #fb97ad;
+    font-size: 2.5rem;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.custom-header h1::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(0,0,0,0));
+    z-index: -1;
 }
 
 * {
-	margin: 40;
-	padding:5 0;
-	box-sizing: border-box;
-	font-family: 'montserrat', sans-serif;
+    margin: 40;
+    padding: 5 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
 }
 
-h3{
+h3 {
     color: black;
 }
-/* Global Styles */
 
-
-/* Header Styles */
-.custom-header {
-    /* background-color: wheat; */
-    background: black;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Container Styles */
 .container-fluid {
     /* background-color: #f8f9fa; */
-    background-color: pink;
+    /* background-color: pink; */
     /* background-color: rgba(205, 255, 255); */
-    
+
     padding: 20px 0;
 }
 
@@ -51,52 +70,56 @@ h3{
     padding: 20px;
 }
 
-/* Input Field Styles */
+
 .form-control {
     border-color: #d1d3e2;
     border-radius: 4px;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
+    /* Adjust font size */
     padding: 10px;
 }
 
-/* Button Styles */
 .btn-primary {
     background-color: #fb97ad;
     border-color: #fb97ad;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
+   
     padding: 12px 24px;
 }
 
-/* Table Styles */
 .table {
     border: 1px solid #dee2e6;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
+   
 }
 
-/* Table Header Button Styles */
+
 .btn-link {
     color: #fb97ad;
     text-decoration: none;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
+  
 }
 
-/* Filter Section Styles */
+
 .filter {
     text-align: right;
-    margin-bottom: 20px; /* Add margin for spacing */
+    margin-bottom: 20px;
+   
 }
 
 
-/* Search Input Styles */
+
 #search {
-    /* border-color: #d1d3e2; */
+   
     border-color: pink;
     border-radius: 4px;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
+    /* Adjust font size */
     padding: 10px;
 }
 
-/* Filter Option Styles */
+
 #filterOption {
     background-color: #f8f9fa;
     border-color: pink;
@@ -104,38 +127,38 @@ h3{
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
 }
 
-/* Completed Row Styles */
+
 .completed-row {
-    background-color: #d4f5d0 !important; /* !important to override Bootstrap's default styles */
+    background-color: #d4f5d0 !important;
 }
 
 /* Responsive Styles */
 @media (max-width: 767px) {
+
     /* Adjust styles for smaller screens */
     .container {
         padding: 10px;
     }
 
     .custom-header h1 {
-        font-size: 2rem; /* Reduce header font size */
+        font-size: 2rem;
+       
     }
 
     .form-control,
     .btn-primary,
     .btn-link,
     #filterOption {
-        font-size: 0.9rem; /* Reduce font size */
+        font-size: 0.9rem;
+        
     }
 }
 
-/* Additional Custom Styles */
-/* Add your custom styles here */
 
 
-/* Hover Effect for Buttons */
 .btn-primary,
 .btn-link,
 #filterOption {
@@ -149,24 +172,23 @@ h3{
     color: white;
 }
 
-/* Hover Effect for Table Rows */
+
 .table tbody tr:hover {
     background-color: #f9f9f9;
     cursor: pointer;
 }
 
-/* Active State for Filter Options */
+
 #filterOption.active {
     background-color: #fb97ad;
     color: white;
 }
 
-/* Styling for Actions Column */
+
 .table tbody .actions {
     text-align: center;
 }
 
-/* Icons for Actions */
 .action-icon {
     font-size: 18px;
     margin: 0 5px;
@@ -180,49 +202,39 @@ h3{
 }
 
 
-/* ... Previous styles ... */
 
-/* Larger Header Text */
+
 .custom-header h1 {
     font-size: 2.5rem;
 }
 
-/* Larger Section Title Text */
+
 .section-title {
     font-size: 2rem;
 }
 
-/* Larger Input Field Text */
+
 .form-control {
     font-size: 1rem;
 }
 
-/* Larger Button Text */
+
 .btn-primary {
     font-size: 1rem;
     padding: 12px 24px;
 }
 
-/* Larger Table Header Button Text */
 .btn-link {
     font-size: 1rem;
 }
 
-/* Larger Filter Option Text */
+
 #filterOption {
     font-size: 1rem;
     padding: 8px 16px;
 }
 
-/* Larger Action Icon Text */
+
 .action-icon {
     font-size: 24px;
 }
-
-
-
-
-
-
-
-
